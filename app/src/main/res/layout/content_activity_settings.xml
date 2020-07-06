@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ActivitySettings"
+    tools:showIn="@layout/activity_settings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+
+                <!--protected static CFG_AUTOSTART sCfgServiceAutoStart = CFG_AUTOSTART.NO;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_autostart" />
+                <Spinner
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="fill_horizontal"
+                    android:id="@+id/ddCfgServiceAutoStart"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static int sCfgListenPort = CFG_LISTEN_PORT_DEFAULT;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_listen_port" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/txtCfgListenPort"
+                    android:inputType="number"
+                    android:maxLength="5"/>
+
+                <!--protected static boolean sCfgHeaderServer = false;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_header_server" />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:id="@+id/cbCfgHeaderServer"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static boolean sCfgHeaderPoweredBy = false;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_header_powered_by" />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:id="@+id/cbCfgHeaderPoweredBy"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static boolean sCfgShowDetails500 = false;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_show_details_500" />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:id="@+id/cbCfgShowDetails500"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static int sCfgRequestWorkersMax = 0;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_request_workers_max" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/txtCfgRequestWorkersMax"
+                    android:inputType="number" />
+
+                <!--protected static int sCfgRequestExpire_ms = 2000;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_request_expire" />
+                <android.support.constraint.ConstraintLayout
+                    android:layout_columnSpan="2"
+                    android:layout_gravity="start|fill_horizontal">
+                    <android.support.v7.widget.AppCompatEditText
+                        android:layout_gravity="start|fill_horizontal"
+                        android:gravity="start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/txtCfgRequestExpire_ms"
+                        android:inputType="number"/>
+                    <android.support.v7.widget.AppCompatEditText
+                        android:layout_gravity="start|clip_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:clickable="false"
+                        app:layout_constraintRight_toRightOf="@id/txtCfgRequestExpire_ms"
+                        app:layout_constraintBottom_toBottomOf="@id/txtCfgRequestExpire_ms"
+                        android:text="ms" />
+                </android.support.constraint.ConstraintLayout>
+
+                <!--sCfgAddressDenyReaction
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_address_deny_reaction" />
+                <Spinner
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/ddCfgAddressDenyReaction"
+                    android:spinnerMode="dropdown" />
+                -->
+
+                <!--protected static HashSet<Utility.InetRange> sCfgAddressWhitelist = null;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_address_whitelist" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/txtCfgAddressWhitelist"
+                    android:hint="@string/value_none"
+                    android:inputType="text|textMultiLine|textNoSuggestions"
+                    android:singleLine="false" />
+
+                <!--protected static HashSet<Utility.InetRange> sCfgAddressBlacklist = null;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_address_blacklist" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/txtCfgAddressBlacklist"
+                    android:hint="@string/value_none"
+                    android:inputType="text|textMultiLine|textNoSuggestions"
+                    android:singleLine="false" />
+
+                <!--protected static CFG_PASSWORD_USE sCfgPasswordUse = CFG_PASSWORD_USE.NONE;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_password_use" />
+                <Spinner
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/ddCfgPasswordUse"
+                    android:digits="0123456789abcdef:.\\n" />
+
+                <!--protected static String sCfgPassword = null;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_password" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/txtCfgPassword"
+                    android:hint="@string/value_empty"
+                    android:imeOptions="flagForceAscii"
+                    android:inputType="textPassword"/>
+
+                <!--protected static boolean sCfgForbidIfLocked = true;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_forbid_if_locked" />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:id="@+id/cbCfgForbidIfLocked"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static boolean sCfgAllowedDuringCall = false;
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_allowed_during_call" />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:id="@+id/cbCfgAllowedDuringCall"
+                    android:spinnerMode="dropdown" />
+                -->
+
+                <!--protected static CFG_COMPO_NOTIF sCfgComposeNotif = CFG_COMPO_NOTIF.YES;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_compo_notif" />
+                <Spinner
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/ddCfgComposeNotif"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static CFG_COMPO_VIBRATE sCfgComposeVibrate = CFG_COMPO_VIBRATE.YES;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_compose_vibrate" />
+                <Spinner
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/ddCfgComposeVibrate"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static CFG_COMPO_MODE sCfgComposeMode = CFG_COMPO_MODE.INTENT_DIAL;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_compose_mode" />
+                <Spinner
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/ddCfgComposeMode"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static boolean sCfgComposeSpeakerphone = true;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_compose_speakerphone" />
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:layout_gravity="center"
+                    android:layout_columnSpan="1"
+                    android:gravity="start"
+                    android:id="@+id/cbCfgComposeSpeakerphone"
+                    android:spinnerMode="dropdown" />
+
+                <!--protected static Pattern sCfgNumbersAllowed = null;-->
+                <TextView
+                    android:layout_gravity="start|fill_horizontal|center_vertical"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="@string/cfg_numbers_allowed" />
+                <android.support.v7.widget.AppCompatEditText
+                    android:layout_gravity="start|fill_horizontal"
+                    android:layout_columnSpan="2"
+                    android:gravity="start"
+                    android:id="@+id/txtCfgNumbersAllowed"
+                    android:hint="@string/value_any" />
+
+            </GridLayout>
+        </ScrollView>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"><TableRow>
+
+            <Button
+                android:id="@+id/btnOk"
+                android:gravity="center_horizontal"
+                android:text="@string/action_ok" />
+            <Button
+                android:id="@+id/btnCancel"
+                android:gravity="center_horizontal"
+                android:text="@string/action_cancel" />
+            <Button
+                android:id="@+id/btnApply"
+                android:gravity="center_horizontal"
+                android:text="@string/action_apply" />
+
+        </TableRow></TableLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

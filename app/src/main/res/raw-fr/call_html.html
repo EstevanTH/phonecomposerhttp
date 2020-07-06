@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<script type="text/javascript">
+		{{include "call.js"}}
+		</script>
+	</head>
+	<body>
+		<form action="./docall.html" method="POST">
+			<input type="text" name="number" {{=inputNumberValue}}/> <input type="submit" value="Composer"/>
+			<input type="hidden" name="token" value="{{=inputTokenValue}}"/>
+		</form>
+	</body>
+</html>

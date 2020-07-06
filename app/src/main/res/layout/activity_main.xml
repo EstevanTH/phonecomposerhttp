@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:clipToPadding="true">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnSvcStop"
+                android:gravity="center_horizontal"
+                android:text="@string/svc_stop" />
+
+            <Button
+                android:id="@+id/btnSvcStart"
+                android:gravity="center_horizontal"
+                android:text="@string/svc_start" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <HorizontalScrollView
+                android:layout_span="2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:clipToPadding="true">
+
+                <TableRow>
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:paddingRight="8sp"
+                        android:text="@string/info_status" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:scrollHorizontally="true"
+                        android:id="@+id/lblStatus"
+                        android:gravity="left" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:paddingRight="8sp"
+                        android:text="@string/info_bound_addr" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:scrollHorizontally="true"
+                        android:id="@+id/lblBoundAddr"
+                        android:gravity="left" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:paddingRight="8sp"
+                        android:text="@string/info_bound_port" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:scrollHorizontally="true"
+                        android:id="@+id/lblBoundPort"
+                        android:gravity="left" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:paddingRight="8sp"
+                        android:text="@string/info_ip_whitelist" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:scrollHorizontally="true"
+                        android:id="@+id/lblIpWhitelist"
+                        android:gravity="left" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:paddingRight="8sp"
+                        android:text="@string/info_ip_blacklist" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:scrollHorizontally="true"
+                        android:id="@+id/lblIpBlacklist"
+                        android:gravity="left" />
+
+                </TableRow>
+
+            </TableLayout></HorizontalScrollView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnOpenGuide"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_open_guide" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btnEditConfig"
+                android:layout_span="2"
+                android:gravity="center_horizontal"
+                android:text="@string/btn_edit_config" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>
